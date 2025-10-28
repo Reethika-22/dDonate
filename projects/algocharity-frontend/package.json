@@ -41,7 +41,8 @@
     "generate:app-clients": "algokit project link --all",
     "dev": "npm run generate:app-clients && vite",
     "build": "npm run generate:app-clients && tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:prod": "npm run build && npm run preview"
   },
   "eslintConfig": {
     "extends": [
