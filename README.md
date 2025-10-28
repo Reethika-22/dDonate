@@ -1,45 +1,40 @@
-# algocharity
+🌐 TrustGive – Decentralizing Charity with Transparency and Trust
 
-This starter full stack project has been generated using AlgoKit. See below for default getting started instructions.
+Problem:
+Today, most online donation systems rely on middlemen — platforms that charge high fees, delay fund transfers, and sometimes even risk fraud or misuse of funds. This lack of transparency makes donors uncertain about where their money truly goes.
 
-## Setup
+Solution:
+That’s where TrustGive comes in.
+Built on Algorand blockchain, TrustGive removes middlemen entirely.
+Every donation is recorded transparently on-chain, so donors can track their funds in real time and ensure that they reach the right recipients.
 
-### Initial setup
-1. Clone this repository to your local machine.
-2. Ensure [Docker](https://www.docker.com/) is installed and operational. Then, install `AlgoKit` following this [guide](https://github.com/algorandfoundation/algokit-cli#install).
-3. Run `algokit project bootstrap all` in the project directory. This command sets up your environment by installing necessary dependencies, setting up a Python virtual environment, and preparing your `.env` file.
-4. In the case of a smart contract project, execute `algokit generate env-file -a target_network localnet` from the `algocharity-contracts` directory to create a `.env.localnet` file with default configuration for `localnet`.
-5. To build your project, execute `algokit project run build`. This compiles your project and prepares it for running.
-6. For project-specific instructions, refer to the READMEs of the child projects:
-   - Smart Contracts: [algocharity-contracts](projects/algocharity-contracts/README.md)
-   - Frontend Application: [algocharity-frontend](projects/algocharity-frontend/README.md)
+💡 How It Works
 
-> This project is structured as a monorepo, refer to the [documentation](https://github.com/algorandfoundation/algokit-cli/blob/main/docs/features/project/run.md) to learn more about custom command orchestration via `algokit project run`.
+Campaign Creation:
+Verified organizations or individuals submit their donation campaigns.
 
-### Subsequently
+Donor Connection:
+Donors connect their Web3 wallet (like Pera Wallet) and send funds directly to the campaign’s smart contract.
 
-1. If you update to the latest source code and there are new dependencies, you will need to run `algokit project bootstrap all` again.
-2. Follow step 3 above.
+Smart Contract Management:
+The smart contract locks, manages, and releases funds only to verified recipients, based on predefined, verifiable conditions.
 
-## Tools
+Transparent Tracking:
+Every transaction is publicly visible on the blockchain, allowing donors to verify fund flow and impact themselves.
 
-This project makes use of Python and React to build Algorand smart contracts and to provide a base project configuration to develop frontends for your Algorand dApps and interactions with smart contracts. The following tools are in use:
+🌱 Our Mission
 
-- Algorand, AlgoKit, and AlgoKit Utils
-- Python dependencies including Poetry, Black, Ruff or Flake8, mypy, pytest, and pip-audit
-- React and related dependencies including AlgoKit Utils, Tailwind CSS, daisyUI, use-wallet, npm, jest, playwright, Prettier, ESLint, and Github Actions workflows for build validation
+Our goal is simple — to restore trust in charitable giving through decentralization.
 
-### VS Code
+“Transparency is not optional — it’s the foundation of trust.”
 
-It has also been configured to have a productive dev experience out of the box in [VS Code](https://code.visualstudio.com/), see the [backend .vscode](./backend/.vscode) and [frontend .vscode](./frontend/.vscode) folders for more details.
+🚀 What Makes D-Donate (TrustGive) Different
 
-## Integrating with smart contracts and application clients
+✅ No middlemen: Donations move directly from donor to recipient — no admin, no hidden fees.
+✅ Transparent transactions: Every donation is stored immutably on the blockchain.
+✅ Smart contracts for trust: Funds are only released when all conditions are met.
+✅ Global access: Anyone, anywhere, with a crypto wallet can give or receive funds.
+✅ Immutable ledger: Once recorded, donations cannot be altered or tampered with — ensuring complete trust.
 
-Refer to the [algocharity-contracts](projects/algocharity-contracts/README.md) folder for overview of working with smart contracts, [projects/algocharity-frontend](projects/algocharity-frontend/README.md) for overview of the React project and the [projects/algocharity-frontend/contracts](projects/algocharity-frontend/src/contracts/README.md) folder for README on adding new smart contracts from backend as application clients on your frontend. The templates provided in these folders will help you get started.
-When you compile and generate smart contract artifacts, your frontend component will automatically generate typescript application clients from smart contract artifacts and move them to `frontend/src/contracts` folder, see [`generate:app-clients` in package.json](projects/algocharity-frontend/package.json). Afterwards, you are free to import and use them in your frontend application.
 
-The frontend starter also provides an example of interactions with your AlgoCharityClient in [`AppCalls.tsx`](projects/algocharity-frontend/src/components/AppCalls.tsx) component by default.
 
-## Next Steps
-
-You can take this project and customize it to build your own decentralized applications on Algorand. Make sure to understand how to use AlgoKit and how to write smart contracts for Algorand before you start.
