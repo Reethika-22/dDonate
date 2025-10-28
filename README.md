@@ -1,14 +1,16 @@
-🌐 TrustGive – Decentralizing Charity with Transparency and Trust
+## 🌐 TrustGive – Decentralizing Charity with Transparency and Trust
 
-Problem:
+## Problem:
 Today, most online donation systems rely on middlemen — platforms that charge high fees, delay fund transfers, and sometimes even risk fraud or misuse of funds. This lack of transparency makes donors uncertain about where their money truly goes.
 
-Solution:
+## Solution:
 That’s where TrustGive comes in.
 Built on Algorand blockchain, TrustGive removes middlemen entirely.
 Every donation is recorded transparently on-chain, so donors can track their funds in real time and ensure that they reach the right recipients.
 
-💡 How It Works
+---
+
+## 💡 How It Works
 
 Campaign Creation:
 Verified organizations or individuals submit their donation campaigns.
@@ -22,13 +24,16 @@ The smart contract locks, manages, and releases funds only to verified recipient
 Transparent Tracking:
 Every transaction is publicly visible on the blockchain, allowing donors to verify fund flow and impact themselves.
 
-🌱 Our Mission
+---
+
+## 🌱 Our Mission
 
 Our goal is simple — to restore trust in charitable giving through decentralization.
 
 “Transparency is not optional — it’s the foundation of trust.”
+---
 
-🚀 What Makes D-Donate (TrustGive) Different
+## 🚀 What Makes D-Donate (TrustGive) Different
 
 ✅ No middlemen: Donations move directly from donor to recipient — no admin, no hidden fees.
 ✅ Transparent transactions: Every donation is stored immutably on the blockchain.
@@ -49,19 +54,20 @@ Our goal is simple — to restore trust in charitable giving through decentraliz
 
 ## ⚙️ Installation & Setup
 
-# Clone this repository
-git clone https://github.com/Reethika-22/dDonate.git
+1. Clone this repository
+   git clone https://github.com/Reethika-22/dDonate.git
 
-# Navigate to the project folder
-cd dDonate
+2. Navigate to the project folder
+   cd dDonate
 
-# Install dependencies
-npm install
+3. Install dependencies
+   npm install
 
-# Run the development server
-npm run dev
+4. Run the development server
+   npm run dev
 
-** Screenshots of the project **
+---
+## Screenshots of the project 
 
 <img width="1824" height="911" alt="image" src="https://github.com/user-attachments/assets/9c28f772-34d7-49a4-aa75-d4977d1e719e" />
 <img width="1831" height="913" alt="image" src="https://github.com/user-attachments/assets/5f48e310-288c-4de9-860f-d7bb2e7acb54" />
@@ -75,7 +81,9 @@ npm run dev
 <img width="1816" height="920" alt="image" src="https://github.com/user-attachments/assets/5e42ddb1-da58-4055-9363-04c5f799e586" />
 <img width="1812" height="923" alt="image" src="https://github.com/user-attachments/assets/5639baad-5a9d-49c0-b86c-7741a0feddb5" />
 
-👩‍💻 Author
+---
+
+## 👩‍💻 Author
 
 Arasavilli Ratna Reethika
 Creator of TrustGive – A Decentralized Charity Platform on Algorand
@@ -85,6 +93,8 @@ Creator of TrustGive – A Decentralized Charity Platform on Algorand
 🌐 Project: TrustGive DApp
 
 💬 “Transparency is not optional — it’s the foundation of trust.”
+
+---
 
 ## 🛠️ Future Enhancements
 
