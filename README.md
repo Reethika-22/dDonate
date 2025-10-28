@@ -1,4 +1,4 @@
-<img width="1816" height="920" alt="image" src="https://github.com/user-attachments/assets/5e42ddb1-da58-4055-9363-04c5f799e586" /><img width="1812" height="923" alt="image" src="https://github.com/user-attachments/assets/5639baad-5a9d-49c0-b86c-7741a0feddb5" />🌐 TrustGive – Decentralizing Charity with Transparency and Trust
+🌐 TrustGive – Decentralizing Charity with Transparency and Trust
 
 Problem:
 Today, most online donation systems rely on middlemen — platforms that charge high fees, delay fund transfers, and sometimes even risk fraud or misuse of funds. This lack of transparency makes donors uncertain about where their money truly goes.
@@ -72,7 +72,8 @@ npm run dev
 <img width="1826" height="913" alt="image" src="https://github.com/user-attachments/assets/70f985f0-11cc-4118-aa9e-db9bd84bc269" />
 <img width="1820" height="916" alt="image" src="https://github.com/user-attachments/assets/4146f790-0bd6-4172-93c8-da287b3b63a6" />
 <img width="1816" height="920" alt="image" src="https://github.com/user-attachments/assets/819a125e-7608-477d-9c8c-35ba75e62635" />
-
+<img width="1816" height="920" alt="image" src="https://github.com/user-attachments/assets/5e42ddb1-da58-4055-9363-04c5f799e586" />
+<img width="1812" height="923" alt="image" src="https://github.com/user-attachments/assets/5639baad-5a9d-49c0-b86c-7741a0feddb5" />
 
 👩‍💻 Author
 
