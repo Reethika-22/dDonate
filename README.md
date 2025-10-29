@@ -1,4 +1,4 @@
-## 🌐 TrustGive – Decentralizing Charity with Transparency and Trust
+<img width="1818" height="914" alt="image" src="https://github.com/user-attachments/assets/e8d91751-f199-4e97-8301-999bce59c99c" />## 🌐 TrustGive – Decentralizing Charity with Transparency and Trust
 
 ## Problem:
 Today, most online donation systems rely on middlemen — platforms that charge high fees, delay fund transfers, and sometimes even risk fraud or misuse of funds. This lack of transparency makes donors uncertain about where their money truly goes.
@@ -69,17 +69,16 @@ Our goal is simple — to restore trust in charitable giving through decentraliz
 ---
 ## Screenshots of the project 
 
-<img width="1824" height="911" alt="image" src="https://github.com/user-attachments/assets/9c28f772-34d7-49a4-aa75-d4977d1e719e" />
-<img width="1831" height="913" alt="image" src="https://github.com/user-attachments/assets/5f48e310-288c-4de9-860f-d7bb2e7acb54" />
-<img width="1812" height="923" alt="image" src="https://github.com/user-attachments/assets/9e33619b-e25d-4e62-8d47-ad99ac13afe5" />
-<img width="1793" height="890" alt="image" src="https://github.com/user-attachments/assets/17d1c7f8-8375-4f3a-a508-02c497d1999d" />
-<img width="1811" height="916" alt="image" src="https://github.com/user-attachments/assets/c28f3cc1-880a-4bd9-b8e4-2fabd6b6b018" />
-<img width="1820" height="918" alt="image" src="https://github.com/user-attachments/assets/97fc84de-796f-49ce-9127-e904630af87b" />
-<img width="1826" height="913" alt="image" src="https://github.com/user-attachments/assets/70f985f0-11cc-4118-aa9e-db9bd84bc269" />
-<img width="1820" height="916" alt="image" src="https://github.com/user-attachments/assets/4146f790-0bd6-4172-93c8-da287b3b63a6" />
-<img width="1816" height="920" alt="image" src="https://github.com/user-attachments/assets/819a125e-7608-477d-9c8c-35ba75e62635" />
-<img width="1816" height="920" alt="image" src="https://github.com/user-attachments/assets/5e42ddb1-da58-4055-9363-04c5f799e586" />
-<img width="1812" height="923" alt="image" src="https://github.com/user-attachments/assets/5639baad-5a9d-49c0-b86c-7741a0feddb5" />
+<img width="1826" height="913" alt="image" src="https://github.com/user-attachments/assets/3ca18af5-a19c-4ed0-9241-cf148aba0d28" />
+<img width="1818" height="914" alt="image" src="https://github.com/user-attachments/assets/29068fec-4bf8-4c31-9bf7-5c60a157d6ea" />
+<img width="1819" height="915" alt="image" src="https://github.com/user-attachments/assets/a47fe70f-eb85-443c-8e43-0e4eb5d7a7f0" />
+<img width="1824" height="907" alt="image" src="https://github.com/user-attachments/assets/d7168239-44e6-4148-b665-37f69ecd393f" />
+<img width="1824" height="913" alt="image" src="https://github.com/user-attachments/assets/6c05c71d-4a46-4823-81a0-008e7e12ce37" />
+<img width="1833" height="916" alt="image" src="https://github.com/user-attachments/assets/6eec8fc9-ca07-450d-8d9b-4a25523c4125" />
+<img width="1841" height="839" alt="image" src="https://github.com/user-attachments/assets/3860f62b-3ccc-4613-bbef-bb5d5c8e687e" />
+<img width="1826" height="915" alt="image" src="https://github.com/user-attachments/assets/8254b831-ad80-44f0-8723-737d6b3177de" />
+<img width="1788" height="910" alt="image" src="https://github.com/user-attachments/assets/7b15309a-6804-4576-bc34-b81b3df8869a" />
+
 
 ---
 
