@@ -107,5 +107,9 @@ Creator of TrustGive – A Decentralized Charity Platform on Algorand
 
 📱 Mobile-friendly UI and QR donation scanning
 
+---
 
+## 📄 License
+
+This project is licensed under the MIT License.
 
