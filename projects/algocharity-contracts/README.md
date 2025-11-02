@@ -188,7 +188,7 @@ algocharity-contracts/
 
 ---
 
-🛠 Tools Used
+## 🛠 Tools Used
 
 Algorand – Layer 1 Blockchain
 
@@ -202,9 +202,14 @@ Poetry – Python dependency and environment manager
 
 Docker – LocalNet containers
 
-👩‍💻 Author
+---
+
+## 👩‍💻 Author
 
 Arasavilli Ratna Reethika
+
 📧 reethika.22.arasavilli@gmail.com
 
 🌐 GitHub: Reethika-22
+
+---
