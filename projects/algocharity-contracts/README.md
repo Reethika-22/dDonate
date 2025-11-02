@@ -131,8 +131,9 @@ Started; execute `algokit explore` to explore LocalNet in a web user interface.
 
 ---
 
-🏗️ Development Workflow
-🧮 Build Smart Contracts
+## 🏗️ Development Workflow
+
+## 🧮 Build Smart Contracts
 
 To compile contracts:
 
@@ -143,7 +144,9 @@ or build a specific contract:
 
 algokit project run build -- algo_charity
 
-🚀 Deploy to LocalNet
+---
+
+## 🚀 Deploy to LocalNet
 
 Deploy contracts:
 
