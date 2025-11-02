@@ -101,7 +101,7 @@ pip install algopy algokit-utils
 
 
 
-# 3️⃣ Configure Environment
+## 3️⃣ Configure Environment
 
 Create an environment file for your local network:
 
