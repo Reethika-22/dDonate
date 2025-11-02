@@ -76,7 +76,7 @@ cd projects/algocharity-contracts
 
 ---
 
-# 2️⃣ Install Dependencies
+## 2️⃣ Install Dependencies
 
 Install Poetry
 
