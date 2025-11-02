@@ -188,3 +188,23 @@ algocharity-contracts/
 
 ---
 
+🛠 Tools Used
+
+Algorand – Layer 1 Blockchain
+
+AlgoKit – Developer CLI for managing Algorand projects
+
+Algopy – Python language for Algorand smart contracts
+
+AlgoKit Utils – Helper functions for interacting with the blockchain
+
+Poetry – Python dependency and environment manager
+
+Docker – LocalNet containers
+
+👩‍💻 Author
+
+Arasavilli Ratna Reethika
+📧 reethika.22.arasavilli@gmail.com
+
+🌐 GitHub: Reethika-22
