@@ -34,3 +34,31 @@ This backend connects to the dDonate frontend (React + Tailwind) through smart c
 🏦 Enable charities to withdraw funds securely
 
 📊 Provide total and per-charity donation stats
+
+---
+
+## ⚙️ Setup
+
+This project has been generated using AlgoKit. Follow the steps below to set up and deploy it locally.
+
+---
+
+## 📋 Pre-requisites
+
+Python 3.12+
+
+Docker
+ (required for LocalNet)
+
+AlgoKit CLI
+ (v2.0.0 or later)
+
+(Recommended) VS Code
+ with Python extension
+
+## 💡 Tip: For an interactive code walkthrough, install the VS Code extension
+vsls-contrib.codetour
+
+and open the file .codetour.json.
+
+---
