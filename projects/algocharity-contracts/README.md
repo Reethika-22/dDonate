@@ -132,9 +132,6 @@ Started; execute `algokit explore` to explore LocalNet in a web user interface.
 ---
 
 ## 🏗️ Development Workflow
-
----
-
 ## 🧮 Build Smart Contracts
 
 To compile contracts:
