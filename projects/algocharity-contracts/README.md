@@ -66,6 +66,8 @@ and open the file .codetour.json.
 ---
 
 ## 🧱 Initial Setup
+---
+
 # 1️⃣ Clone the Repository
 
 git clone https://github.com/Reethika-22/dDonate.git
