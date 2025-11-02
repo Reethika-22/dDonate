@@ -89,6 +89,12 @@ Creator of TrustGive – A Decentralized Charity Platform on Algorand
 
 📧 Email: reethika.22.arasavilli@gmail.com
 
+Portfolio: [https://reethika-22.github.io/ratna_reethika_arasavilli_portfolio/]
+
+LinkedIn: [www.linkedin.com/in/reethika-arasavilli2216]
+
+GitHub: [https://github.com/Reethika-22]
+
 🌐 Project: TrustGive DApp
 
 💬 “Transparency is not optional — it’s the foundation of trust.”
@@ -107,5 +113,9 @@ Creator of TrustGive – A Decentralized Charity Platform on Algorand
 
 📱 Mobile-friendly UI and QR donation scanning
 
+---
 
+## 📄 License
+
+This project is licensed under the MIT License.
 
