@@ -65,12 +65,16 @@ and open the file .codetour.json.
 
 ---
 
-🧱 Initial Setup
-1️⃣ Clone the Repository
+## 🧱 Initial Setup
+# 1️⃣ Clone the Repository
+
 git clone https://github.com/Reethika-22/dDonate.git
 cd projects/algocharity-contracts
 
-2️⃣ Install Dependencies
+---
+
+# 2️⃣ Install Dependencies
+
 Install Poetry
 
 Poetry is used to manage dependencies.
@@ -95,7 +99,9 @@ python -m venv venv
 venv\Scripts\activate
 pip install algopy algokit-utils
 
-3️⃣ Configure Environment
+
+
+# 3️⃣ Configure Environment
 
 Create an environment file for your local network:
 
@@ -104,7 +110,10 @@ algokit generate env-file -a target_network localnet
 
 This generates .env.localnet with AlgoKit defaults.
 
-4️⃣ Start LocalNet
+
+
+# 4️⃣ Start LocalNet
+
 algokit localnet start
 
 
