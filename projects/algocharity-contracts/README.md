@@ -167,23 +167,14 @@ python deploy_donation.py
 ## 🧾 Project Structure
 
 algocharity-contracts/
-
 ├── smart_contracts/
-
-│    └── algo_charity/
-
-│         ├── donation_contract.py     # Main donation logic
-
+│   └── algo_charity/
+│       ├── donation_contract.py     # Main donation logic
 │       ├── deploy_donation.py       # Deployment script
-
 │       └── __init__.py
-
 ├── artifacts/                       # Compiled contract data
-
 ├── requirements.txt
-
 ├── .env.localnet
-
 └── README.md
 
 ---
