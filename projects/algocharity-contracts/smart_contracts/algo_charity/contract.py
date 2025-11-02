@@ -18,11 +18,9 @@ class DonationContract(ARC4Contract):
         # Donation amount by each donor (local state)
         self.donor_donations = LocalState(UInt64, key="donor_donations", description="Total donations made by each donor")
 
-        # Mapping of cause IDs to balances (global state)
-        self.cause_balances = GlobalState(dict, key="cause_balances", description="Tracks balance per cause ID")
-
-        # Mapping of cause IDs to owners (global state)
-        self.cause_owners = GlobalState(dict, key="cause_owners", description="Owner address for each cause ID")
+        # Cause-specific balances and owners (using separate global keys)
+        self.cause_balance = GlobalState(UInt64(0), key="cause_balance", description="Balance for the current cause")
+        self.cause_owner = GlobalState(Account(), key="cause_owner", description="Owner of the cause")
 
     # -------------------------------
     # User Methods
@@ -31,52 +29,38 @@ class DonationContract(ARC4Contract):
     @arc4.abimethod(allow_actions=["OptIn"])
     def opt_in(self) -> None:
         """Opt into the contract to enable donation tracking for sender"""
-        self.donor_donations[Txn.sender] = UInt64(0)
+        self.donor_donations.set(Txn.sender, UInt64(0))
 
     @arc4.abimethod
     def register_cause(self, cause_name: arc4.String) -> arc4.UInt64:
-        """
-        Register a new cause.
-        Each cause is assigned a unique ID.
-        Only the creator (Txn.sender) becomes the cause owner.
-        """
-        self.cause_count.value += UInt64(1)
-        cause_id = self.cause_count.value
-        self.cause_balances[cause_id] = UInt64(0)
-        self.cause_owners[cause_id] = Txn.sender
+        """Register a new cause with a unique ID"""
+        self.cause_count.set(self.cause_count.get() + UInt64(1))
+        cause_id = self.cause_count.get()
+        self.cause_owner.set(Txn.sender)
+        self.cause_balance.set(UInt64(0))
         return arc4.UInt64(cause_id)
 
     @arc4.abimethod
     def donate(self, cause_id: arc4.UInt64, amount: arc4.UInt64) -> arc4.UInt64:
-        """
-        Donate a specified amount of Algos to a cause.
-        The sender’s total donations and cause balance are both updated.
-        """
+        """Donate a specified amount to a cause"""
         assert amount.native > 0, "Donation amount must be greater than zero"
-        assert cause_id.native <= self.cause_count.value, "Invalid cause ID"
+        assert cause_id.native <= self.cause_count.get(), "Invalid cause ID"
 
-        # Update total and donor-specific donations
-        self.total_donations.value += amount.native
-        self.donor_donations[Txn.sender] += amount.native
-        self.cause_balances[cause_id.native] += amount.native
-
-        return arc4.UInt64(self.total_donations.value)
+        self.total_donations.set(self.total_donations.get() + amount.native)
+        self.donor_donations.set(Txn.sender, self.donor_donations.get(Txn.sender) + amount.native)
+        self.cause_balance.set(self.cause_balance.get() + amount.native)
+        return arc4.UInt64(self.total_donations.get())
 
     @arc4.abimethod
     def withdraw(self, cause_id: arc4.UInt64, receiver: Account) -> None:
-        """
-        Allow the cause owner to withdraw all donations for their cause.
-        """
-        assert cause_id.native <= self.cause_count.value, "Invalid cause ID"
-        owner = self.cause_owners[cause_id.native]
-        assert Txn.sender == owner, "Only the cause owner can withdraw funds"
+        """Allow the cause owner to withdraw all donations"""
+        assert cause_id.native <= self.cause_count.get(), "Invalid cause ID"
+        assert Txn.sender == self.cause_owner.get(), "Only the cause owner can withdraw funds"
 
-        amount = self.cause_balances[cause_id.native]
+        amount = self.cause_balance.get()
         assert amount > 0, "No funds available for withdrawal"
-
-        # Simulate fund transfer
-        self.cause_balances[cause_id.native] = UInt64(0)
-        # In actual implementation, use an inner transaction to send Algos
+        self.cause_balance.set(UInt64(0))
+        # TODO: implement inner transaction to actually send funds
 
     # -------------------------------
     # Read-only Queries
@@ -84,32 +68,24 @@ class DonationContract(ARC4Contract):
 
     @arc4.abimethod(readonly=True)
     def get_total_donations(self) -> arc4.UInt64:
-        """Return total donations across all causes"""
-        return arc4.UInt64(self.total_donations.value)
+        return arc4.UInt64(self.total_donations.get())
 
     @arc4.abimethod(readonly=True)
     def get_donor_donations(self) -> arc4.UInt64:
-        """Return total donations by the caller"""
-        return arc4.UInt64(self.donor_donations[Txn.sender])
+        return arc4.UInt64(self.donor_donations.get(Txn.sender))
 
     @arc4.abimethod(readonly=True)
-    def get_cause_balance(self, cause_id: arc4.UInt64) -> arc4.UInt64:
-        """Return the current donation balance for a specific cause"""
-        return arc4.UInt64(self.cause_balances[cause_id.native])
+    def get_cause_balance(self) -> arc4.UInt64:
+        return arc4.UInt64(self.cause_balance.get())
 
     @arc4.abimethod(readonly=True)
-    def get_cause_owner(self, cause_id: arc4.UInt64) -> arc4.Address:
-        """Return the owner address for a specific cause"""
-        return arc4.Address(self.cause_owners[cause_id.native].bytes)
+    def get_cause_owner(self) -> arc4.Address:
+        return arc4.Address(self.cause_owner.get().bytes)
 
     @arc4.abimethod(readonly=True)
     def get_cause_count(self) -> arc4.UInt64:
-        """Return total number of registered causes"""
-        return arc4.UInt64(self.cause_count.value)
+        return arc4.UInt64(self.cause_count.get())
 
     @arc4.abimethod(readonly=True)
     def get_sender_address(self) -> arc4.Address:
-        """Return the address of the caller"""
         return arc4.Address(Txn.sender.bytes)
-
-
