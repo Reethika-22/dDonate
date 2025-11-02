@@ -56,7 +56,9 @@ AlgoKit CLI
 (Recommended) VS Code
  with Python extension
 
-## 💡 Tip: For an interactive code walkthrough, install the VS Code extension
+## 💡 Tip: 
+
+For an interactive code walkthrough, install the VS Code extension
 vsls-contrib.codetour
 
 and open the file .codetour.json.
