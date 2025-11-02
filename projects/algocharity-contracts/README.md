@@ -64,3 +64,55 @@ vsls-contrib.codetour
 and open the file .codetour.json.
 
 ---
+
+🧱 Initial Setup
+1️⃣ Clone the Repository
+git clone https://github.com/Reethika-22/dDonate.git
+cd projects/algocharity-contracts
+
+2️⃣ Install Dependencies
+Install Poetry
+
+Poetry is used to manage dependencies.
+
+pip install poetry
+poetry -V  # should show version 1.2+
+
+Install Project Dependencies
+
+Run:
+
+algokit project bootstrap all
+
+
+This sets up a .venv environment and installs required Python packages.
+
+Optional (Manual setup if needed)
+
+If the above fails, create a virtual environment manually:
+
+python -m venv venv
+venv\Scripts\activate
+pip install algopy algokit-utils
+
+3️⃣ Configure Environment
+
+Create an environment file for your local network:
+
+algokit generate env-file -a target_network localnet
+
+
+This generates .env.localnet with AlgoKit defaults.
+
+4️⃣ Start LocalNet
+algokit localnet start
+
+
+✅ You should see:
+
+docker: Container algokit_sandbox_algod Healthy
+docker: Container algokit_sandbox_indexer Healthy
+Started; execute `algokit explore` to explore LocalNet in a web user interface.
+
+
+⚠️ If you see “Aborted”, ensure Docker Desktop is running before executing the command.
