@@ -170,9 +170,9 @@ algocharity-contracts/
 
 ├── smart_contracts/
 
-│     └── algo_charity/
+│    └── algo_charity/
 
-│       ├── donation_contract.py     # Main donation logic
+│         ├── donation_contract.py     # Main donation logic
 
 │       ├── deploy_donation.py       # Deployment script
 
