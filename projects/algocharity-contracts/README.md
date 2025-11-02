@@ -26,7 +26,11 @@ This backend connects to the dDonate frontend (React + Tailwind) through smart c
 ## 🧩 Features
 
 ✅ Register verified charities
+
 💰 Accept ALGO donations directly
+
 📜 Maintain transparent donation records
+
 🏦 Enable charities to withdraw funds securely
+
 📊 Provide total and per-charity donation stats
