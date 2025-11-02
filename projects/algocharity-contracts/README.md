@@ -128,3 +128,34 @@ Started; execute `algokit explore` to explore LocalNet in a web user interface.
 
 
 ⚠️ If you see “Aborted”, ensure Docker Desktop is running before executing the command.
+
+---
+
+🏗️ Development Workflow
+🧮 Build Smart Contracts
+
+To compile contracts:
+
+algokit project run build
+
+
+or build a specific contract:
+
+algokit project run build -- algo_charity
+
+🚀 Deploy to LocalNet
+
+Deploy contracts:
+
+algokit project deploy localnet
+
+
+or deploy a specific one:
+
+algokit project deploy localnet -- algo_charity
+
+
+You can also manually run the Python deploy file:
+
+cd smart_contracts/algo_charity
+python deploy_donation.py
