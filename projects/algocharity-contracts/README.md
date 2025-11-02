@@ -188,6 +188,19 @@ algocharity-contracts/
 
 ---
 
+## 🧠 Integration with Frontend (dDonate)
+
+After deployment, note the App ID printed by your deploy script.
+
+Then, go to your frontend .env and update:
+
+VITE_APP_ID=<Deployed_App_ID>
+VITE_ALGOD_SERVER=http://localhost
+VITE_ALGOD_PORT=4001
+VITE_ALGOD_TOKEN=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+---
+
 ## 🛠 Tools Used
 
 Algorand – Layer 1 Blockchain
