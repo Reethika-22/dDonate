@@ -1,7 +1,7 @@
 import logging
 import algokit_utils
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(_name_)
 
 # Deployment script for dDonate Algorand Smart Contract
 def deploy() -> None:
