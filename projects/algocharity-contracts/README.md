@@ -1,11 +1,13 @@
-💠 AlgoCharity Smart Contracts
+## 💠 AlgoCharity Smart Contracts
 
 This project contains the smart contracts powering the dDonate decentralized donation platform, built on the Algorand blockchain using AlgoKit and Algopy.
 
 AlgoCharity enables transparent, secure, and verifiable charitable donations directly on-chain — without intermediaries.
 
-🚀 Overview
-🌍 Purpose
+---
+
+## 🚀 Overview
+## 🌍 Purpose
 
 The AlgoCharity contract handles:
 
@@ -19,7 +21,9 @@ Withdrawal of donations by charities
 
 This backend connects to the dDonate frontend (React + Tailwind) through smart contract interactions using the Pera Wallet.
 
-🧩 Features
+---
+
+## 🧩 Features
 
 ✅ Register verified charities
 💰 Accept ALGO donations directly
