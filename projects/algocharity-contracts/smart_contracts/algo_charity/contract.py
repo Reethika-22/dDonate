@@ -8,7 +8,7 @@ class DonationContract(ARC4Contract):
     and charities can withdraw funds with on-chain transparency.
     """
 
-    def _init_(self) -> None:
+    def __init__(self) -> None:
         # Total Algos donated across all causes
         self.total_donations = GlobalState(UInt64(0), key="total_donations", description="Total Algos donated in all causes")
 
@@ -111,3 +111,5 @@ class DonationContract(ARC4Contract):
     def get_sender_address(self) -> arc4.Address:
         """Return the address of the caller"""
         return arc4.Address(Txn.sender.bytes)
+
+
