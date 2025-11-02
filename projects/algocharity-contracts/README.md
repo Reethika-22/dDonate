@@ -66,9 +66,10 @@ and open the file .codetour.json.
 ---
 
 ## 🧱 Initial Setup
+
 ---
 
-# 1️⃣ Clone the Repository
+## 1️⃣ Clone the Repository
 
 git clone https://github.com/Reethika-22/dDonate.git
 cd projects/algocharity-contracts
@@ -112,9 +113,9 @@ algokit generate env-file -a target_network localnet
 
 This generates .env.localnet with AlgoKit defaults.
 
+---
 
-
-# 4️⃣ Start LocalNet
+## 4️⃣ Start LocalNet
 
 algokit localnet start
 
