@@ -165,3 +165,24 @@ Frontend UI updates live to reflect donation activity
 
 ---
 
+
+🧪 Example Flow
+
+1️⃣ Open app → http://localhost:5173
+2️⃣ Click Connect Wallet → Pera Wallet popup appears
+3️⃣ Select charity → enter donation amount
+4️⃣ Confirm transaction in Pera Wallet
+5️⃣ Transaction executes on Algorand blockchain
+6️⃣ UI updates donation totals instantly
+
+🖼️ UI Features
+
+🎨 Responsive and modern Tailwind design
+
+🔄 Animated transitions via Framer Motion
+
+📊 Donation analytics with Recharts
+
+💼 Wallet connection state displayed in navbar
+
+⚙️ Smart contract interactions handled seamlessly
