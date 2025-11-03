@@ -1,9 +1,9 @@
-💠 dDonate Frontend
+## 💠 dDonate Frontend
 
 This is the frontend interface for the AlgoCharity decentralized donation platform, built using React, Vite, and TailwindCSS.
 It connects to the AlgoCharity smart contract deployed on the Algorand blockchain.
 
-🌍 Overview
+## 🌍 Overview
 
 The dDonate DApp allows users to:
 
@@ -19,7 +19,7 @@ Allow charities to withdraw funds
 
 The application interacts with the backend smart contract in algocharity-contracts via the Algorand SDK.
 
-🧰 Tech Stack
+## 🧰 Tech Stack
 Layer	Technology
 Frontend Framework	React + Vite
 Styling	TailwindCSS + Framer Motion
