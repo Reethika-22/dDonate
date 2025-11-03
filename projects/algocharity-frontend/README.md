@@ -196,3 +196,23 @@ Frontend UI updates live to reflect donation activity
 
 ---
 
+## 🧩 Integration with Backend
+
+The frontend connects to the AlgoCharity Smart Contract deployed using the backend (algocharity-contracts).
+
+To connect:
+
+Deploy backend contract
+
+Copy the printed App ID
+
+Paste it into .env as VITE_APP_ID
+
+Start the frontend and test donations
+
+## 👩‍💻 Author
+
+Arasavilli Ratna Reethika
+📧 reethika.22.arasavilli@gmail.com
+
+🌐 GitHub: Reethika-22
