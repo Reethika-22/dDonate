@@ -20,10 +20,12 @@ Allow charities to withdraw funds
 The application interacts with the backend smart contract in algocharity-contracts via the Algorand SDK.
 
 ## 🧰 Tech Stack
-Layer	Technology
-Frontend Framework	React + Vite
-Styling	TailwindCSS + Framer Motion
-Blockchain SDK	Algorand JS SDK
-Wallet Integration	Pera Wallet
-Charting	Recharts (for donation stats)
-State Management	Redux Toolkit
+|Layer |	Technology |
+|**Frontend Framework** |	React + Vite |
+|**Styling** |	TailwindCSS + Framer Motion |
+|**Blockchain** | SDK	Algorand JS SDK |
+|**Wallet Integration** |	Pera Wallet |
+|**Charting** |	Recharts (for donation stats) |
+|**State Management**	| Redux Toolkit |
+
+
