@@ -113,7 +113,8 @@ Transfers ALGO to the charity’s contract address
 
 ---
 
-🧱 Project Structure
+## 🧱 Project Structure
+
 ddonate-frontend/
 ├── public/
 │   └── logo.png
@@ -132,7 +133,9 @@ ddonate-frontend/
 ├── package.json
 └── README.md
 
-🧠 How it Works
+---
+
+## 🧠 How it Works
 
 User connects Pera Wallet → Address stored in state
 
@@ -143,3 +146,6 @@ Donations are sent via the Algorand JS SDK
 Charity balances and total donations fetched from the blockchain
 
 Frontend UI updates live to reflect donation activity
+
+---
+
