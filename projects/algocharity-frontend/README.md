@@ -86,8 +86,8 @@ npm run serve
 
 ---
 
-💳 Pera Wallet Integration
-✅ Connecting Pera Wallet
+## 💳 Pera Wallet Integration
+### ✅ Connecting Pera Wallet
 
 The frontend uses the Pera Wallet SDK to connect user wallets.
 
@@ -99,7 +99,7 @@ Stores the user’s wallet address in Redux state
 
 Enables donation buttons and blockchain calls
 
-🔗 Sending a Donation
+### 🔗 Sending a Donation
 
 Each donation triggers an Algorand transaction:
 
@@ -108,3 +108,6 @@ Connects to the user’s wallet (Pera)
 Calls the donate() ABI method of the deployed smart contract
 
 Transfers ALGO to the charity’s contract address
+
+---
+
