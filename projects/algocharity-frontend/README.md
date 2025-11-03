@@ -3,6 +3,8 @@
 This is the frontend interface for the AlgoCharity decentralized donation platform, built using React, Vite, and TailwindCSS.
 It connects to the AlgoCharity smart contract deployed on the Algorand blockchain.
 
+---
+
 ## 🌍 Overview
 
 The dDonate DApp allows users to:
@@ -111,3 +113,33 @@ Transfers ALGO to the charity’s contract address
 
 ---
 
+🧱 Project Structure
+ddonate-frontend/
+├── public/
+│   └── logo.png
+├── src/
+│   ├── components/         # Reusable UI components
+│   ├── pages/              # Main app pages (Home, Donate, About)
+│   ├── hooks/              # Wallet & Algorand hooks
+│   ├── context/            # Context for wallet and contract state
+│   ├── redux/              # Redux slices for app state
+│   ├── utils/              # Algorand and helper functions
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── tailwind.config.js
+├── vite.config.js
+├── package.json
+└── README.md
+
+🧠 How it Works
+
+User connects Pera Wallet → Address stored in state
+
+Contract initialized using VITE_APP_ID from .env
+
+Donations are sent via the Algorand JS SDK
+
+Charity balances and total donations fetched from the blockchain
+
+Frontend UI updates live to reflect donation activity
