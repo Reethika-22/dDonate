@@ -203,17 +203,14 @@ VITE_ALGOD_TOKEN=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 ## 🛠 Tools Used
 
-Algorand – Layer 1 Blockchain
-
-AlgoKit – Developer CLI for managing Algorand projects
-
-Algopy – Python language for Algorand smart contracts
-
-AlgoKit Utils – Helper functions for interacting with the blockchain
-
-Poetry – Python dependency and environment manager
-
-Docker – LocalNet containers
+| **Layer** | **Technology** |
+|-------|--------------------|
+| **Algorand** | Layer 1 Blockchain|
+| **AlgoKit** | Developer CLI for managing Algorand |
+| **Algopy** | Python language for Algorand smart contracts |
+| **AlgoKit Utils** | Helper functions for interacting with the blockchain |
+| **Poetry** | Python dependency and environment manager |
+| **Docker** | LocalNet containers |
 
 ---
 
