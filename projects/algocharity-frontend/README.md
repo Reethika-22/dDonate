@@ -21,6 +21,7 @@ The application interacts with the backend smart contract in algocharity-contrac
 
 ## 🧰 Tech Stack
 |Layer |	Technology |
+|------|--------------|
 |**Frontend Framework** |	React + Vite |
 |**Styling** |	TailwindCSS + Framer Motion |
 |**Blockchain** | SDK	Algorand JS SDK |
