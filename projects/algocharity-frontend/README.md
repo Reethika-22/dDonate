@@ -49,17 +49,17 @@ npm install
 
 Create a .env file in the project root and add the following:
 
-### Algorand network configuration (LocalNet / TestNet)
+ Algorand network configuration (LocalNet / TestNet)
 
 VITE_ALGOD_SERVER=http://localhost
 VITE_ALGOD_PORT=4001
 VITE_ALGOD_TOKEN=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-### Smart contract App ID (from AlgoKit deploy)
+ Smart contract App ID (from AlgoKit deploy)
 
 VITE_APP_ID=<YOUR_DEPLOYED_APP_ID>
 
-### Network type (localnet / testnet / mainnet)
+ Network type (localnet / testnet / mainnet)
 
 VITE_NETWORK=localnet
 
