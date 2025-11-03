@@ -9,14 +9,10 @@ import ErrorHandler from './components/ErrorHandler';
 import BlockchainSync from './components/BlockchainSync';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
+import { useWallet } from '../../context/WalletContext'; // ✅ Import wallet context
 
 const WalletIntegration = () => {
-  const [walletState, setWalletState] = useState({
-    isConnected: false,
-    address: '',
-    balance: '0.00',
-    isConnecting: false
-  });
+  const { account, isConnected, connectWallet, disconnectWallet } = useWallet(); // ✅ Use Pera wallet context
 
   const [transactionFlow, setTransactionFlow] = useState({
     step: 'wallet', // wallet, preview, signing, confirmation
@@ -31,13 +27,7 @@ const WalletIntegration = () => {
     blockHeight: 32847291
   });
 
-  // Mock wallet data
-  const mockWalletData = {
-    address: 'ALGO7X9K2M3N4P5Q6R7S8T9U0V1W2X3Y4Z5A6B7C8D9E0F1G2H3I4J5K6L7M8N9',
-    balance: '125.50'
-  };
-
-  // Mock transaction data
+  // Mock transaction data (still for demo UI flow)
   const mockTransactions = [
     {
       id: 'tx_001',
@@ -60,8 +50,8 @@ const WalletIntegration = () => {
     }
   ];
 
+  // 🔄 Simulate blockchain sync updates every 30s
   useEffect(() => {
-    // Simulate blockchain sync updates
     const syncInterval = setInterval(() => {
       setBlockchainSync(prev => ({
         ...prev,
@@ -69,59 +59,17 @@ const WalletIntegration = () => {
         blockHeight: prev?.blockHeight + Math.floor(Math.random() * 3)
       }));
     }, 30000);
-
     return () => clearInterval(syncInterval);
   }, []);
 
-  const handleWalletConnect = async () => {
-    setWalletState(prev => ({ ...prev, isConnecting: true }));
-
-    try {
-      // Simulate connection delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      setWalletState({
-        isConnected: true,
-        address: mockWalletData?.address,
-        balance: mockWalletData?.balance,
-        isConnecting: false
-      });
-    } catch (error) {
-      setTransactionFlow(prev => ({
-        ...prev,
-        error: {
-          type: 'connection',
-          title: 'Connection Failed',
-          message: 'Unable to connect to Pera Wallet',
-          details: 'Please ensure Pera Wallet is installed and try again.'
-        }
-      }));
-      setWalletState(prev => ({ ...prev, isConnecting: false }));
-    }
-  };
-
-  const handleWalletDisconnect = () => {
-    setWalletState({
-      isConnected: false,
-      address: '',
-      balance: '0.00',
-      isConnecting: false
-    });
-    setTransactionFlow({
-      step: 'wallet',
-      transaction: null,
-      isProcessing: false,
-      error: null
-    });
-  };
-
+  // Handle demo transaction flows
   const handleStartTransaction = (type = 'donation') => {
-    if (!walletState?.isConnected) {
-      handleWalletConnect();
+    if (!isConnected) {
+      connectWallet();
       return;
     }
 
-    const transaction = mockTransactions?.find(tx => tx?.type === type) || mockTransactions?.[0];
+    const transaction = mockTransactions.find(tx => tx?.type === type) || mockTransactions[0];
     setTransactionFlow({
       step: 'preview',
       transaction,
@@ -142,27 +90,13 @@ const WalletIntegration = () => {
     setTransactionFlow(prev => ({ ...prev, isProcessing: true }));
 
     try {
-      // Simulate signing process
       await new Promise(resolve => setTimeout(resolve, 3000));
-
-      // Random chance of failure for demo
-      if (Math.random() < 0.1) {
-        throw new Error('Transaction rejected by user');
-      }
 
       setTransactionFlow(prev => ({
         ...prev,
         step: 'confirmation',
         isProcessing: false
       }));
-
-      // Update wallet balance
-      const newBalance = parseFloat(walletState?.balance) - parseFloat(transactionFlow?.transaction?.amount) - parseFloat(transactionFlow?.transaction?.fee);
-      setWalletState(prev => ({
-        ...prev,
-        balance: Math.max(0, newBalance)?.toFixed(2)
-      }));
-
     } catch (error) {
       setTransactionFlow(prev => ({
         ...prev,
@@ -199,6 +133,7 @@ const WalletIntegration = () => {
     }));
   };
 
+  // 🔁 Render transaction flow stages
   const renderTransactionFlow = () => {
     if (transactionFlow?.error) {
       return (
@@ -265,15 +200,13 @@ const WalletIntegration = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Left Column - Wallet Status & Controls */}
+            {/* Left Column */}
             <div className="lg:col-span-1 space-y-6">
               <WalletStatusCard
-                isConnected={walletState?.isConnected}
-                walletAddress={walletState?.address}
-                balance={walletState?.balance}
-                onConnect={handleWalletConnect}
-                onDisconnect={handleWalletDisconnect}
-                isConnecting={walletState?.isConnecting}
+                isConnected={isConnected}
+                walletAddress={account}
+                onConnect={connectWallet}
+                onDisconnect={disconnectWallet}
               />
 
               <BlockchainSync
@@ -283,7 +216,7 @@ const WalletIntegration = () => {
               />
 
               {/* Quick Actions */}
-              {walletState?.isConnected && (
+              {isConnected && (
                 <div className="bg-card border border-border rounded-lg p-4 shadow-elevation-1">
                   <h4 className="text-sm font-medium text-foreground mb-3">Quick Actions</h4>
                   <div className="space-y-2">
@@ -310,7 +243,7 @@ const WalletIntegration = () => {
               )}
             </div>
 
-            {/* Right Column - Transaction Flow */}
+            {/* Right Column */}
             <div className="lg:col-span-2">
               {transactionFlow?.step !== 'wallet' ? (
                 renderTransactionFlow()
@@ -320,24 +253,22 @@ const WalletIntegration = () => {
                     <Icon name="Smartphone" size={40} className="text-muted-foreground" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {walletState?.isConnected ? 'Ready for Transactions' : 'Connect Your Wallet'}
+                    {isConnected ? 'Ready for Transactions' : 'Connect Your Wallet'}
                   </h3>
                   <p className="text-muted-foreground mb-6">
-                    {walletState?.isConnected
+                    {isConnected
                       ? 'Your wallet is connected and ready. Start a transaction to see the flow.'
-                      : 'Connect your Pera Wallet to begin making donations and managing transactions.'
-                    }
+                      : 'Connect your Pera Wallet to begin making donations and managing transactions.'}
                   </p>
 
-                  {!walletState?.isConnected && (
+                  {!isConnected && (
                     <Button
                       variant="default"
-                      onClick={handleWalletConnect}
-                      loading={walletState?.isConnecting}
+                      onClick={connectWallet}
                       iconName="Wallet"
                       iconPosition="left"
                     >
-                      {walletState?.isConnecting ? 'Connecting...' : 'Connect Pera Wallet'}
+                      Connect Pera Wallet
                     </Button>
                   )}
                 </div>
@@ -353,42 +284,50 @@ const WalletIntegration = () => {
                 {
                   icon: 'Shield',
                   title: 'Secure Transactions',
-                  description: 'All transactions are secured by Algorand blockchain cryptography and smart contracts.',
+                  description:
+                    'All transactions are secured by Algorand blockchain cryptography and smart contracts.',
                   color: 'success'
                 },
                 {
                   icon: 'Eye',
                   title: 'Full Transparency',
-                  description: 'Every transaction is publicly verifiable on AlgoExplorer with immutable records.',
+                  description:
+                    'Every transaction is publicly verifiable on AlgoExplorer with immutable records.',
                   color: 'primary'
                 },
                 {
                   icon: 'Zap',
                   title: 'Instant Processing',
-                  description: 'Fast transaction finality with low fees on the Algorand network.',
+                  description:
+                    'Fast transaction finality with low fees on the Algorand network.',
                   color: 'warning'
                 },
                 {
                   icon: 'Award',
                   title: 'NFT Certificates',
-                  description: 'Receive unique NFT proof of donation for every charitable contribution.',
+                  description:
+                    'Receive unique NFT proof of donation for every charitable contribution.',
                   color: 'accent'
                 },
                 {
                   icon: 'Mail',
                   title: 'Email Notifications',
-                  description: 'Automatic email confirmations for all successful transactions.',
+                  description:
+                    'Automatic email confirmations for all successful transactions.',
                   color: 'secondary'
                 },
                 {
                   icon: 'BarChart3',
                   title: 'Real-time Updates',
-                  description: 'Live blockchain synchronization for accurate balance and transaction data.',
+                  description:
+                    'Live blockchain synchronization for accurate balance and transaction data.',
                   color: 'primary'
                 }
-              ]?.map((feature, index) => (
+              ].map((feature, index) => (
                 <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-elevation-1">
-                  <div className={`w-12 h-12 bg-${feature?.color}/10 rounded-lg flex items-center justify-center mb-4`}>
+                  <div
+                    className={`w-12 h-12 bg-${feature?.color}/10 rounded-lg flex items-center justify-center mb-4`}
+                  >
                     <Icon name={feature?.icon} size={24} className={`text-${feature?.color}`} />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{feature?.title}</h3>
