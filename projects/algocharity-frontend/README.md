@@ -210,6 +210,8 @@ Paste it into .env as VITE_APP_ID
 
 Start the frontend and test donations
 
+---
+
 ## 👩‍💻 Author
 
 Arasavilli Ratna Reethika
