@@ -50,20 +50,24 @@ npm install
 Create a .env file in the project root and add the following:
 
 ### Algorand network configuration (LocalNet / TestNet)
+
 VITE_ALGOD_SERVER=http://localhost
 VITE_ALGOD_PORT=4001
 VITE_ALGOD_TOKEN=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 ### Smart contract App ID (from AlgoKit deploy)
+
 VITE_APP_ID=<YOUR_DEPLOYED_APP_ID>
 
 ### Network type (localnet / testnet / mainnet)
+
 VITE_NETWORK=localnet
 
 
 💡 Replace <YOUR_DEPLOYED_APP_ID> with the App ID shown after running your deploy script from the smart contract (algocharity-contracts).
 
 ### 4️⃣ Run the Development Server
+
 npm run dev
 
 
