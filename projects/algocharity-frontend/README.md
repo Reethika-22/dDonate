@@ -49,20 +49,19 @@ npm install
 
 Create a .env file in the project root and add the following:
 
- Algorand network configuration (LocalNet / TestNet)
+**Algorand network configuration (LocalNet / TestNet)**
 
 VITE_ALGOD_SERVER=http://localhost
 VITE_ALGOD_PORT=4001
 VITE_ALGOD_TOKEN=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
- Smart contract App ID (from AlgoKit deploy)
+**Smart contract App ID (from AlgoKit deploy)**
 
 VITE_APP_ID=<YOUR_DEPLOYED_APP_ID>
 
- Network type (localnet / testnet / mainnet)
+**Network type (localnet / testnet / mainnet)**
 
 VITE_NETWORK=localnet
-
 
 💡 Replace <YOUR_DEPLOYED_APP_ID> with the App ID shown after running your deploy script from the smart contract (algocharity-contracts).
 
@@ -76,11 +75,36 @@ Your app will be available at
 
 ### 5️⃣ Build for Production
 
-To create an optimized build:
+**To create an optimized build:**
 
 npm run build
 
 
-To preview the build locally:
+**To preview the build locally:**
 
 npm run serve
+
+---
+
+💳 Pera Wallet Integration
+✅ Connecting Pera Wallet
+
+The frontend uses the Pera Wallet SDK to connect user wallets.
+
+When a user clicks "Connect Wallet", the app:
+
+Prompts Pera Wallet to connect
+
+Stores the user’s wallet address in Redux state
+
+Enables donation buttons and blockchain calls
+
+🔗 Sending a Donation
+
+Each donation triggers an Algorand transaction:
+
+Connects to the user’s wallet (Pera)
+
+Calls the donate() ABI method of the deployed smart contract
+
+Transfers ALGO to the charity’s contract address
