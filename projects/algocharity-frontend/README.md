@@ -116,21 +116,37 @@ Transfers ALGO to the charity’s contract address
 ## 🧱 Project Structure
 
 ddonate-frontend/
+
 ├── public/
+
 │   └── logo.png
+
 ├── src/
+
 │   ├── components/         # Reusable UI components
+
 │   ├── pages/              # Main app pages (Home, Donate, About)
+
 │   ├── hooks/              # Wallet & Algorand hooks
+
 │   ├── context/            # Context for wallet and contract state
+
 │   ├── redux/              # Redux slices for app state
+
 │   ├── utils/              # Algorand and helper functions
+
 │   ├── App.jsx
+
 │   ├── main.jsx
+
 │   └── index.css
+
 ├── tailwind.config.js
+
 ├── vite.config.js
+
 ├── package.json
+
 └── README.md
 
 ---
