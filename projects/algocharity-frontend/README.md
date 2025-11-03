@@ -19,6 +19,8 @@ Allow charities to withdraw funds
 
 The application interacts with the backend smart contract in algocharity-contracts via the Algorand SDK.
 
+---
+
 ## 🧰 Tech Stack
 |Layer |	Technology |
 |------|--------------|
