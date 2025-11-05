@@ -7,6 +7,7 @@
     "tailwindcss": "^4.1.16"
   },
   "dependencies": {
-    "@perawallet/connect": "^1.4.2"
+    "@perawallet/connect": "^1.4.2",
+    "buffer": "^6.0.3"
   }
 }
