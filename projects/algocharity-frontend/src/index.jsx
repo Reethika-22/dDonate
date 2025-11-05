@@ -1,3 +1,6 @@
+import { Buffer } from "buffer";          // ✅ Fix: Add this line
+window.Buffer = Buffer;                   // ✅ Make Buffer globally available
+
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
