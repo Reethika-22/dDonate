@@ -34,8 +34,8 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card border-b border-border shadow-elevation-1">
-      <div className="flex items-center justify-between h-16 px-4 lg:px-6">
-        {/* Logo */}
+      <div className="flex items-center justify-between h-16 px-4 lg:px-8">
+        {/* Logo - Left */}
         <Link to="/landing-page" className="flex items-center space-x-2 transition-smooth hover:opacity-80">
           <div className="flex items-center justify-center w-8 h-8 bg-primary rounded-lg">
             <Icon name="Heart" size={20} color="white" />
@@ -43,8 +43,8 @@ const Header = () => {
           <span className="text-xl font-bold text-foreground">TrustGive</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
+        {/* Center Navigation */}
+        <nav className="hidden md:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
           {navigationItems?.map((item) => (
             <Link
               key={item?.path}
@@ -61,12 +61,12 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Right */}
         <button
           className="md:hidden p-2 rounded-lg hover:bg-muted transition"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <Icon name={isMobileMenuOpen ? "X" : "Menu"} size={20} />
+          <Icon name={isMobileMenuOpen ? 'X' : 'Menu'} size={20} />
         </button>
       </div>
 
